@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number concept game</title>
+</head>
+<body>
+        <h1>This is a random number game </h1><br>
+      <input id="useranswer" type="number">
+      <button onclick=" ans()" id="button">Send</button>
+      <p id="result">Answer is Right OR Wrong</p>
+      <h2 id="score">Score:10</h2> 
+       <style>
+        #result{
+          color: green;
+        }
+           #score{
+            color: goldenrod;
+           
+            width: 90px;
+            transition: 4s;
+           }
+           #button{
+                  color:gold;
+                  background-color:gray;
+           }
+       </style>
+      <script>
+        
+              var useranswer=document.getElementById("useranswer")
+              var result=document.getElementById("result")
+              var randomnumber=Math.floor(Math.random()*10)+1
+              var score=document.getElementById("score")
+              var totalscore=10
+              function ans(){
+                 var enterednum=useranswer.value
+
+                 if(enterednum==randomnumber){
+                  score.style.backgroundColor="green"
+
+                  totalscore=totalscore+1
+                  score.textContent="Score:"+totalscore
+                  alert("You Won the game")
+
+                    console.log("Right")
+                    result.textContent="Right Answer"
+                    
+
+                 }
+                 else{
+                  totalscore=totalscore-1
+                  score.style.backgroundColor="red"
+
+                    score.textContent="Score:"+totalscore
+                    result.textContent="Wrong Answer"
+                   
+                 }
+           }
+      </script>
+</body>
+</html>
